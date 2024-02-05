@@ -42,8 +42,9 @@ public class LoginPage {
     @Step("Проверяем видимость полей для входа на странице логина")
     public void enterSectionIsVisible() {
             new WebDriverWait(driver, 10).until(
-                    ExpectedConditions.visibilityOf(driver.findElement(enterSection))
-            );}
+                    ExpectedConditions.presenceOfElementLocated(enterSection));
+            assertTrue(driver.findElement(enterSection).isDisplayed());
+    }
 
 
     @Step("Заполняем поле email")
@@ -64,9 +65,7 @@ public class LoginPage {
     @Step("Переходим в раздел /login, авторизуемся и нажимаем войти")
     public void fullLogin(String email, String password) {
         driver.get("https://stellarburgers.nomoreparties.site/login");
-        new WebDriverWait(driver, 7).until(
-                ExpectedConditions.visibilityOf(driver.findElement(enterSection))
-        );
+        enterSectionIsVisible();
         driver.findElement(emilField).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(enterButton).click();

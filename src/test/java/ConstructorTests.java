@@ -51,7 +51,7 @@ public class ConstructorTests {
     @Test
     @DisplayName("Проверяем работу таба Булки")
     @Description("Нажимаем на таб начинки, затем на таб булки и проверяем, что секция видна и таб стал активным")
-    public void bulkiTabCheck() throws InterruptedException {
+    public void bulkiTabCheck() {
         ConstructorMainPage constructorMainPage = new ConstructorMainPage(driver);
         constructorMainPage.goToMainPage();
 
@@ -62,7 +62,6 @@ public class ConstructorTests {
 
         constructorMainPage.clickBulkiTab();
         constructorMainPage.bulkiSectionIsVisible();
-        Thread.sleep(10000);
         constructorMainPage.bulkiTabActiveCheck();
     }
 }

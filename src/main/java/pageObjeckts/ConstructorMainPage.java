@@ -44,14 +44,15 @@ public class ConstructorMainPage {
     @Step("Проверяем видимость главной страницы")
     public void mainPageIsVisible() {
         new WebDriverWait(driver, 10).until(
-                ExpectedConditions.visibilityOf(driver.findElement(mainPageScreen))
-        );}
+        ExpectedConditions.presenceOfElementLocated(mainPageScreen));
+        assertTrue(driver.findElement(mainPageScreen).isDisplayed());}
 
     @Step("Проверяем видимость блока с табами")
     public void blockTabIsVisible() {
         new WebDriverWait(driver, 6).until(
-                ExpectedConditions.visibilityOf(driver.findElement(blockTab))
-        );}
+        ExpectedConditions.presenceOfElementLocated(blockTab));
+        assertTrue(driver.findElement(blockTab).isDisplayed());
+    }
 
     @Step("Нажимаем на таб Булки")
     public void clickBulkiTab() {
@@ -61,16 +62,14 @@ public class ConstructorMainPage {
     @Step("Проверяем, что секция с булками видна")
     public void bulkiSectionIsVisible() {
         new WebDriverWait(driver, 6).until(
-            ExpectedConditions.visibilityOf(driver.findElement(bulkiSection))
-            );
+        ExpectedConditions.presenceOfElementLocated(bulkiSection));
         assertTrue(driver.findElement(bulkiSection).isDisplayed());
     }
 
     @Step("Проверяем, что таб булки стал активным")
     public void bulkiTabActiveCheck() {
-        new WebDriverWait(driver, 6).until(
-                ExpectedConditions.visibilityOf(driver.findElement(bulkiTabActive))
-        );
+        new WebDriverWait(driver, 10).until(
+        ExpectedConditions.presenceOfElementLocated(bulkiTabActive));
         assertTrue(driver.findElement(bulkiTabActive).isDisplayed());
     }
 
@@ -82,8 +81,7 @@ public class ConstructorMainPage {
     @Step("Проверяем, что секция с соусами видна")
     public void sousesSectionIsVisible() {
         new WebDriverWait(driver, 6).until(
-                ExpectedConditions.visibilityOf(driver.findElement(sousesSection))
-        );
+        ExpectedConditions.presenceOfElementLocated(sousesSection));
         assertTrue(driver.findElement(sousesSection).isDisplayed());
     }
     @Step("Проверяем, что таб соусы стал активным")
@@ -99,8 +97,7 @@ public class ConstructorMainPage {
     @Step("Проверяем, что секция с начинками видна")
     public void nachinkiSectionIsVisible() {
         new WebDriverWait(driver, 6).until(
-                ExpectedConditions.visibilityOf(driver.findElement(sousesSection))
-        );
+        ExpectedConditions.presenceOfElementLocated(nachinkiSection));
         assertTrue(driver.findElement(nachinkiSection).isDisplayed());
     }
     @Step("Проверяем, что таб начинки стал активным")

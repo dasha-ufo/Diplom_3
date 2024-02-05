@@ -1,4 +1,5 @@
 import factoryBrowsers.WebDriverFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -6,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjeckts.ConstructorMainPage;
 import pageObjeckts.Header;
 import pageObjeckts.LoginPage;
@@ -90,7 +92,7 @@ public class PersonalCabinetTests {
     @Test
     @DisplayName("Выход по кнопке «Выйти» в личном кабинете")
     @Description("Под авторизованным пользователем нажимаем «Выйти» в личном кабинете")
-    public void exitFromPersonalCabinet() throws InterruptedException {
+    public void exitFromPersonalCabinet() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fullLogin(email,password);
 
@@ -99,7 +101,6 @@ public class PersonalCabinetTests {
 
         PersonalCabinetPage personalCabinetPage = new PersonalCabinetPage(driver);
         personalCabinetPage.pressExitButton();
-        Thread.sleep(10000);
         loginPage.enterSectionIsVisible();
     }
     }

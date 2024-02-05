@@ -28,14 +28,15 @@ public class PersonalCabinetPage {
     @Step("Проверяем видимость блока с навигацией профиля")
     public void isNavigationBlockVisible(){
         new WebDriverWait(driver, 10).until(
-        ExpectedConditions.visibilityOf(driver.findElement(navigationBlock)));
+        ExpectedConditions.presenceOfElementLocated(navigationBlock));
+        assertTrue(driver.findElement(navigationBlock).isDisplayed());
     }
 
     @Step("Проверяем видимость блока с данными профиля")
     public void isContentBlockVisible(){
     new WebDriverWait(driver, 10).until(
-    ExpectedConditions.visibilityOf(driver.findElement(profileContentBlock)));
-    assertTrue(driver.findElement(profileContentBlock).isDisplayed());
+        ExpectedConditions.presenceOfElementLocated(profileContentBlock));
+        assertTrue(driver.findElement(profileContentBlock).isDisplayed());
      }
     @Step("Дождаться пока загрузится страница профиля")
     public void isPersonalAccountPageVisible(){
