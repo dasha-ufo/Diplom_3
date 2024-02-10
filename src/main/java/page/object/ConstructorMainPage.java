@@ -1,4 +1,4 @@
-package pageObjeckts;
+package page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -14,6 +14,7 @@ public class ConstructorMainPage {
             this.driver = driver;
         }
 
+    public static final String MAIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/";
     private By enterToAccountButton = By.cssSelector(".button_button__33qZ0");
     private By mainPageScreen = By.className("App_componentContainer__2JC2W");
     private By bulkiTab = By.xpath(".//div[@style='display: flex;']/div[1]");
@@ -29,10 +30,9 @@ public class ConstructorMainPage {
     private By nachinkiTabActive = By.xpath(".//div/div[3][@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']");
 
 
-
     @Step("Переходим на главную страницу Stellar Burgers")
     public void goToMainPage(){
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(MAIN_PAGE_URL);
     }
 
 

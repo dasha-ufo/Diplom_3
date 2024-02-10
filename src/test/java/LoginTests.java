@@ -1,4 +1,4 @@
-import factoryBrowsers.WebDriverFactory;
+import factory.browsers.ChooseBrowser;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -6,10 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pageObjeckts.*;
-import testDataCreateApi.apiResponses.DeleteAccount;
-import testDataCreateApi.apiResponses.RegisterAccount;
-import testDataCreateApi.pojo.RegistrationBodyForm;
+import page.object.*;
+import api.data.responses.DeleteAccount;
+import api.data.responses.RegisterAccount;
+import api.data.pojo.RegistrationBodyForm;
 
 public class LoginTests {
     private WebDriver driver;
@@ -21,10 +21,8 @@ public class LoginTests {
 
     @Before
     public void startUp() {
-        WebDriverFactory webDriverFactory = new WebDriverFactory();
-        driver = webDriverFactory.getWebDriver();
+        driver = ChooseBrowser.chooseWebDriver();
         registerAccount = new RegisterAccount();
-        registrationBodyForm = new RegistrationBodyForm();
         registrationBodyForm = RegistrationBodyForm.randomAccount();
         password = registrationBodyForm.getPassword();
         email = registrationBodyForm.getEmail();

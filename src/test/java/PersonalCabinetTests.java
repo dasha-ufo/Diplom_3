@@ -1,5 +1,4 @@
-import factoryBrowsers.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import factory.browsers.ChooseBrowser;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -7,27 +6,27 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pageObjeckts.ConstructorMainPage;
-import pageObjeckts.Header;
-import pageObjeckts.LoginPage;
-import pageObjeckts.PersonalCabinetPage;
-import testDataCreateApi.apiResponses.DeleteAccount;
-import testDataCreateApi.apiResponses.RegisterAccount;
-import testDataCreateApi.pojo.RegistrationBodyForm;
+import page.object.ConstructorMainPage;
+import page.object.Header;
+import page.object.LoginPage;
+import page.object.PersonalCabinetPage;
+import api.data.responses.DeleteAccount;
+import api.data.responses.RegisterAccount;
+import api.data.pojo.RegistrationBodyForm;
 
 public class PersonalCabinetTests {
         private WebDriver driver;
         private String email;
         private String password;
         private Response responseForDelete;
+        private RegisterAccount registerAccount;
+        private RegistrationBodyForm registrationBodyForm;
+
 
         @Before
         public void startUp() {
-            WebDriverFactory webDriverFactory = new WebDriverFactory();
-            driver = webDriverFactory.getWebDriver();
-            RegisterAccount registerAccount = new RegisterAccount();
-            RegistrationBodyForm registrationBodyForm = new RegistrationBodyForm();
+            driver = ChooseBrowser.chooseWebDriver();
+            registerAccount = new RegisterAccount();
             registrationBodyForm = RegistrationBodyForm.randomAccount();
             password = registrationBodyForm.getPassword();
             email = registrationBodyForm.getEmail();

@@ -1,20 +1,19 @@
-import factoryBrowsers.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import factory.browsers.ChooseBrowser;
+import factory.browsers.WebDriverFactory;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pageObjeckts.ConstructorMainPage;
+import page.object.ConstructorMainPage;
 
 public class ConstructorTests {
     private WebDriver driver;
 
     @Before
     public void startUp() {
-        WebDriverFactory webDriverFactory = new WebDriverFactory();
-        driver = webDriverFactory.getWebDriver();
+        driver = ChooseBrowser.chooseWebDriver();
     }
 
     @After

@@ -1,4 +1,4 @@
-package pageObjeckts;
+package page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -9,6 +9,7 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver driver){
         this.driver = driver;
     }
+    public static final String REGISTRATION_PAGE_URL = "https://stellarburgers.nomoreparties.site/register";
     private By nameFieldRegistration = By.xpath("//fieldset[1]/div/div/input");
     private By emailFieldRegistration = By.xpath("//fieldset[2]/div/div/input");
     private By passwordFieldRegistration = By.xpath("//fieldset[3]/div/div/input");
@@ -18,7 +19,7 @@ public class RegistrationPage {
 
     @Step("Переходим на страницу регистрации")
     public void goToRegistrationPage(){
-        driver.get("https://stellarburgers.nomoreparties.site/register");
+        driver.get(REGISTRATION_PAGE_URL);
     }
     @Step("Заполняем поле имя")
     public void fillNameField(String name) {

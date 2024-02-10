@@ -1,4 +1,4 @@
-package factoryBrowsers;
+package factory.browsers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ public class WebDriverFactory {
     public WebDriver getWebDriver() {
         switch (System.getProperty("browser")) {
             case "yandex":
-                System.setProperty("webdriver.chrome.driver","/Users/daricheban/Diplom_3/src/main/resources/yandexdriver");
+                System.setProperty("webdriver.chrome.driver","src/main/resources/yandexdriver");
                 ChromeOptions options = new ChromeOptions();
                 options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
                 return new ChromeDriver(options);

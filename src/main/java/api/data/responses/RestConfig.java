@@ -1,4 +1,4 @@
-package testDataCreateApi.apiResponses;
+package api.data.responses;
 
 public class RestConfig {
 

@@ -1,8 +1,8 @@
-package testDataCreateApi.apiResponses;
+package api.data.responses;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import testDataCreateApi.pojo.RegistrationBodyForm;
+import api.data.pojo.RegistrationBodyForm;
 
 public class RegisterAccount extends RestClient {
     public static final String ACCOUNT_REGISTER = "/api/auth/register";
@@ -14,6 +14,5 @@ public class RegisterAccount extends RestClient {
                 .when()
                 .post(ACCOUNT_REGISTER);
     }
-
 }
 

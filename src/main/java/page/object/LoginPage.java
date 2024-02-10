@@ -1,4 +1,4 @@
-package pageObjeckts;
+package page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -15,6 +15,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
+    public static final String LOGIN_PAGE_URL = "https://stellarburgers.nomoreparties.site/login";
     private By enterButton = By.cssSelector(".button_button__33qZ0");
     private By registrationButton = By.xpath(".//a[@class = 'Auth_link__1fOlj' and (contains(text(),'Зарегистрироваться'))]");
     private By remindPasswordButton = By.xpath(".//a[@class = 'Auth_link__1fOlj' and (contains(text(),'Восстановить пароль'))]");
@@ -26,10 +27,9 @@ public class LoginPage {
     private By passwordField = By.xpath(".//fieldset[2]/div/div/input[@class='text input__textfield text_type_main-default']");
 
 
-
     @Step("Переходим на страницу логина")
     public void goToLoginPage(){
-        driver.get("https://stellarburgers.nomoreparties.site/login");
+        driver.get(LOGIN_PAGE_URL);
     }
     @Step("Нажимаем кнопку Зарегистрироваться")
     public void pressRegistrationButton() {

@@ -1,4 +1,4 @@
-package pageObjeckts;
+package page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -19,11 +19,6 @@ public class PersonalCabinetPage {
     private By historyOfOrdersButton = By.xpath(".//li[2][@class='Account_listItem__35dAP']");
     private By exitButton = By.xpath(".//li[3][@class='Account_listItem__35dAP']/button");
 
-
-    @Step("Переходим в личный кабинет под авторизованным пользователем")
-    public void goToPersonalCabinetPage(){
-        driver.get("https://stellarburgers.nomoreparties.site/account/profile");
-    }
 
     @Step("Проверяем видимость блока с навигацией профиля")
     public void isNavigationBlockVisible(){
