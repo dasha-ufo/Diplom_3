@@ -1,4 +1,4 @@
-package api.data.responses;
+package api.responses;
 
 public class RestConfig {
 

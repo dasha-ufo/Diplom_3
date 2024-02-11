@@ -1,8 +1,8 @@
-package api.data.responses;
+package api.responses;
 
 import io.restassured.specification.RequestSpecification;
 
-import static api.data.responses.RestConfig.BASE_URI;
+import static api.responses.RestConfig.BASE_URI;
 import static io.restassured.RestAssured.given;
 
 public abstract class RestClient {

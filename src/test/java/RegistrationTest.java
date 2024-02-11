@@ -1,4 +1,4 @@
-import factory.browsers.ChooseBrowser;
+import browsers.ChooseBrowser;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -6,11 +6,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import page.object.ConstructorMainPage;
-import page.object.Header;
-import page.object.LoginPage;
-import page.object.RegistrationPage;
-import api.data.responses.DeleteAccount;
+import pageobject.ConstructorMainPage;
+import pageobject.Header;
+import pageobject.LoginPage;
+import pageobject.RegistrationPage;
+import api.responses.DeleteAccount;
 
 public class RegistrationTest {
 
@@ -73,8 +73,8 @@ public class RegistrationTest {
         registrationPage.fillPasswordField(password);
         registrationPage.pressRegistrationConfirmButton();
 
-        registrationPage.passwordErrorVisible();
-
         DeleteAccount.deleteWitEmptyAccessToken(email, password);
+
+        registrationPage.passwordErrorVisible();
     }
 }

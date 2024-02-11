@@ -1,6 +1,6 @@
-package api.data.responses;
+package api.responses;
 
-import api.data.pojo.RegistrationBodyForm;
+import api.pojo.RegistrationBodyForm;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 

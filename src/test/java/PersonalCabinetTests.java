@@ -1,4 +1,4 @@
-import factory.browsers.ChooseBrowser;
+import browsers.ChooseBrowser;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -6,13 +6,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import page.object.ConstructorMainPage;
-import page.object.Header;
-import page.object.LoginPage;
-import page.object.PersonalCabinetPage;
-import api.data.responses.DeleteAccount;
-import api.data.responses.RegisterAccount;
-import api.data.pojo.RegistrationBodyForm;
+import pageobject.ConstructorMainPage;
+import pageobject.Header;
+import pageobject.LoginPage;
+import pageobject.PersonalCabinetPage;
+import api.responses.DeleteAccount;
+import api.responses.RegisterAccount;
+import api.pojo.RegistrationBodyForm;
 
 public class PersonalCabinetTests {
         private WebDriver driver;

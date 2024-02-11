@@ -1,8 +1,8 @@
-package api.data.responses;
+package api.responses;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import api.data.pojo.RegistrationBodyForm;
+import api.pojo.RegistrationBodyForm;
 
 public class RegisterAccount extends RestClient {
     public static final String ACCOUNT_REGISTER = "/api/auth/register";
